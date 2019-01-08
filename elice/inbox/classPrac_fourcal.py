@@ -1,3 +1,4 @@
+
 class FourCal:
     def setdata(self,first,second):
         self.first = first
