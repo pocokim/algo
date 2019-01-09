@@ -10,9 +10,20 @@ def rotateArray(nums, k):
 
     return temp
 
-    # for j in range(len(nums)-k):
-    #     newArray.append(nums[i])
-    
+    # return nums[len(nums)-k:]+nums[:len(nums)-k]
+    # 엘리스 해설 풀이 1
+
+    # partialReverse(nums,0,len(nums)-1)
+    # partialReverse(nums,0,k-1)
+    # partialReverse(nums,k,len(nums)-1)
+    # return nums
+    # 엘리스 해설 풀이 2
+
+
+    # print(nums[:len(nums)-k])
+    # print(nums[len(nums)-k:])  
+
+    # print(nums[len(nums)-k:]+nums[0:1])  
 
 # 다음 함수는 추가적인 공간 사용 없이 배열의 일부를 뒤집어 주는 함수입니다.
 # 예를 들어, nums = [1,2,3,4,5]
