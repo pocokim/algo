@@ -1,4 +1,4 @@
-def twoSum(nums, target):
+
     # for i in range(len(nums)):
     #     for j in range(1,len(nums)-i):
     #         temp = nums[i]+nums[i+j]
@@ -12,7 +12,7 @@ def twoSum(nums, target):
 
 # 배열안의 숫자를 하나씩 보기위해서 숫자를 하나씩 사용하기 
 # fo i in nums 
-
+def twoSum(nums, target):
     nums.sort()
     i,j = 0,len(nums)-1
 
@@ -25,6 +25,8 @@ def twoSum(nums, target):
         elif sum < target:
             i += 1
     return False
+# 2019.1.10 오피스아워    
+# 슬라이딩 윈도우 알고리즘과 약간 유사하다고 함
 
 
 # if in문의 사용
