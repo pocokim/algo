@@ -1,6 +1,26 @@
 
 def thirdMax(nums):
 
+    # 풀이 1
+    nums.remove(max(nums))
+    nums.remove(max(nums))
+    return max(nums)
+    
+    # temp =[nums[0],nums[1],nums[2]]
+    # for i in range(3,len(nums)):
+    #     a = max(nums[i],max(temp))
+    #     if a in temp:
+    #         pass
+    #     else : 
+    #         temp.append(a)
+    #         temp.remove(min(temp))
+        
+    #     print(temp)
+    # return min(temp)
+
+
+
+
     # nums.sort()
     # return nums[-3]
     # 90점 짜리 풀이라고 한다... 
