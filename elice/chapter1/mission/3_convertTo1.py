@@ -115,7 +115,7 @@ def convertTo1(num):
 
 def main():
     # print(convertTo1(10))
-    for i in range(1,15):
+    for i in range(1,150):
         print(convertTo1(i))   
 
 
