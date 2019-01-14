@@ -1,15 +1,25 @@
 def solution(nums):
-    #풀이 1
+    #풀이 1 set 
     # return list(set(nums))
 
-    #풀이 2
-    dic = {}
-    for i in range(len(nums)):
-        if nums[i] not in dic.values():
-            dic[i] = nums[i]
-    return len(dic.values())    
+    #풀이 2 딕셔너리
+    # dic = {}
+    # for i in range(len(nums)):
+    #     if nums[i] not in dic.values():
+    #         dic[i] = nums[i]
+    # return len(dic.values())    
+    
+    #풀이 3
+    # nlogn 시간복잡도 sort후 조건문     
+    #     temp =[nums[0]]
+    #     nums.sort()
+    #     for i in range(1,len(nums)):
+    #         if nums[i] != nums[i-1]:
+    #             temp.append(nums[i])
+    #     return len(temp)
     
 
+    # 풀이 4 브루트 포싱 
     # 시간복잡도 n^2
     # temp = []
     # for i in range(len(nums)):
