@@ -1,9 +1,21 @@
 def solution(nums):
-    temp = []
+    #풀이 1
+    # return list(set(nums))
+
+    #풀이 2
+    dic = {}
     for i in range(len(nums)):
-        if nums[i] not in temp:
-            temp.append(nums[i])
-    return len(temp)
+        if nums[i] not in dic.values():
+            dic[i] = nums[i]
+    return len(dic.values())    
+    
+
+    # 시간복잡도 n^2
+    # temp = []
+    # for i in range(len(nums)):
+    #     if nums[i] not in temp:
+    #         temp.append(nums[i])
+    # return len(temp)
 
     # DP로 해결할 수 있을것같음... 
     # temp = [nums[0]]
