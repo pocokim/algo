@@ -1,7 +1,13 @@
 def solution(nums):
-    for i in range(1,int(((len(nums)+1)/2))+1):
-        if nums.count(i) !=2 :
-            return i
+    #풀이 1
+    nums.sort()
+    for i in range(len(nums)):
+        if (nums[i+2]-nums[i+1]==1 and nums[i+1]-nums[i]==1):
+            return nums[i+1]
+    #풀이 2
+    # for i in range(1,int(((len(nums)+1)/2))+1):
+    #     if nums.count(i) !=2 :
+    #         return i
 
 
 def main():
