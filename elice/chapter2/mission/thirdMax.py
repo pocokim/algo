@@ -2,10 +2,25 @@
 def thirdMax(nums):
 
     # 풀이 1
-    nums.remove(max(nums))
-    nums.remove(max(nums))
-    return max(nums)
+    # nums.remove(max(nums))
+    # nums.remove(max(nums))
+    # return max(nums)
     
+    #풀이 2
+    ans = [ nums[0],nums[1],nums[2]]
+    ans[2],ans[0],ans[1] = max(ans) , min(ans) , sum(ans) - max(ans) - min(ans)
+    
+    for i in range(3,len(nums)):
+        if nums[i] > ans[2]:
+            ans[2],ans[1],ans[0] = nums[i],ans[2],ans[1]
+        elif  nums[i] < ans[2] and nums[i] > ans[1] :
+            ans[1],ans[0] = nums[i],ans[1]
+        elif nums[i] < ans[1] and nums[i] >ans[0] :
+            ans[0] = nums[i]
+
+    return ans[0]
+    
+
     # temp =[nums[0],nums[1],nums[2]]
     # for i in range(3,len(nums)):
     #     a = max(nums[i],max(temp))
@@ -26,7 +41,7 @@ def thirdMax(nums):
     # 90점 짜리 풀이라고 한다... 
 
 def main():
-    print(thirdMax([2, 8, 19, 37, 4, 5, 12, 50, 1, 34, 23])) # should return 34
+    print(thirdMax([2, 19, 8, 37, 4, 5, 12, 50, 1, 34, 23])) # should return 34
 
 if __name__ == "__main__":
     main()
