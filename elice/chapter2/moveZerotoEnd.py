@@ -1,5 +1,20 @@
 
 def moveZerosToEnd(nums):
+
+
+    # 0을 빼면 인덱스가 모두 바뀌어버리기 떄문에 0을빼는 방법이아닌
+    # 0 이 아닌숫자를 순서대로 앞으로 넣는 방법이 자연스러운 방법이다.
+    curr = 0
+    for i in range(len(nums)):
+        if nums[i] != 0:
+            nums[curr] = nums[i]
+            nums[i] = 0
+            # nums[i] = 0
+            curr += 1 
+    return nums
+
+
+    
     # curr = 0
     # for i in range(len(nums)):
     #     if nums[i] != 0:
