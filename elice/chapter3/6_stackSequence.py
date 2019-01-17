@@ -27,37 +27,63 @@
 # 어떤 조건 if문하에 추가되는건지 생각해봐야할듯.
 # 내 생각에는 1씩 차이나야하는것, 최대값을 고려하는것, 나머지 값을 고려하는것과 같은 3가지 조건이 들어가야함. 
 
+# ====================================
+
+# 해설을 본다음의 나의 생각: 나는 4, 3, 6, 8 을 그대로 이용해서 사용하려고 했는데, 4라는 숫자 자체를 push해서 풀기보다는 4까지 즉 1,2,3,4를 push하고 pop해서 빠진게 4이다. 라는 식으로 접근하는 문제였다. 
+# 즉 count를 이용햐서 푸는 문제였던것이다. 
+
+
+
+
+# def isStackSequence(nums):
+
+#     # 1,2를 바탕으로 해본 삽질1
+#     # stack =[]
+#     # for num in nums:
+#     #     if len(stack) ==0:
+#     #         stack.append(num)
+#     #         print(stack)
+#     #     else: 
+#     #         if num < stack[-1]:
+#     #             stack.append(num)
+#     #         else :
+#     #             stack.pop()
+#     #             print(stack)
+#     #             stack.append(num)
+#     #             print(stack)
+#         # print(stack)
+
+#     #  1,2를 바탕으로 해본 삽질2
+#     # stack = [nums[0]]
+#     # print(stack[-1])
+#     # for i in range(1,len(nums)):
+#     #     if nums[i] > stack[-1]:
+#     #         stack.append(nums[i])
+#     #     else :
+#     #         stack.pop()
+#     #     print(stack)
+
+#     return True
 
 
 def isStackSequence(nums):
+    count = 1
+    stack =[]
+    for num in nums:
+        while count <= num :
+            stack.append(count)
+            count +=1
+            print(stack)
+        
+        # if num < count : 이렇게 짜면 빼고싶은값이 뺴지는게 아니라 , count보다 작은값은 다 빠지게 됨
+        if num == stack[-1]:
+            stack.pop()
+            print(stack)
+        else : return False
+    
+    if len(stack) == 0 : return True 
+    # return True
 
-    # 1,2를 바탕으로 해본 삽질1
-    # stack =[]
-    # for num in nums:
-    #     if len(stack) ==0:
-    #         stack.append(num)
-    #         print(stack)
-    #     else: 
-    #         if num < stack[-1]:
-    #             stack.append(num)
-    #         else :
-    #             stack.pop()
-    #             print(stack)
-    #             stack.append(num)
-    #             print(stack)
-        # print(stack)
-
-    #  1,2를 바탕으로 해본 삽질2
-    # stack = [nums[0]]
-    # print(stack[-1])
-    # for i in range(1,len(nums)):
-    #     if nums[i] > stack[-1]:
-    #         stack.append(nums[i])
-    #     else :
-    #         stack.pop()
-    #     print(stack)
-
-    return True
 
 def main():
     print(isStackSequence([2, 1, 4, 3])) # True가 리턴되어야 합니다
