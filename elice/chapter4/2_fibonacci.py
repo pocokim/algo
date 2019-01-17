@@ -20,9 +20,12 @@
         # 과연 이게 메모이제이션이 잘 된건가.. 싶긴하다. 잘되지 않았다. 먼저 5를 부르면 4와 3을 호출하는 식으로 , 저장은 하지만 메모이제이션은 안되는 그런 상태인것이다. 
         # 즉 메모이제이션을 위해서는 있으면 사용하라! 라는 코드가 있어야한다.
         # 그게 바로 아래의 코드 
-        
+
         #    if num in self.memo:
         #         return  self.memo[num]
+
+        # 헷갈렸던점1)
+        # 클래스를 정의했으면 클래스를 선언하고, 메소드는 인스턴스의 함수로 호출해서 사용해야한다. 
 
 
 class Fib():
@@ -54,7 +57,7 @@ class Fib():
     
 def main():
     a = Fib()
-    print(a.fibonacci(10))
+    print(a.fibonacci(10)) # 바로 이부분, 순간 클래스 선언을 안하고 사용할 수 있나? 라고 착각했었다. 그래서 fibonacci 에 return Fib (n-1) + Fib(n-2)의 형태로 출력해야하는것인가? 햇갈렸다. 
 
     # print(fibonacci(10)) # should return 55
 
