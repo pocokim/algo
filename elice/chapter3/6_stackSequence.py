@@ -76,7 +76,8 @@ def isStackSequence(nums):
             print(stack)
         
         # if num < count : 이렇게 짜면 빼고싶은값이 뺴지는게 아니라 , count보다 작은값은 다 빠지게 됨
-        if num == stack[-1]:
+        #  빠져야할값: stack[-1], 빠져야하는값으로 들어온값 :num 이 같으면 빼고, 아니면 return False 
+        if num == stack[-1]: 
             stack.pop()
             print(stack)
         else : return False
