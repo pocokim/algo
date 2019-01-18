@@ -48,8 +48,29 @@ def listToCompleteBinaryTree(lst):
     # helper(1) 이 호출될때 node에 새로운 값이 담기지만 그건 상관이 없는것이다. node(0) 이 호출되고 helper(1)을 부른다음에  node에 또 주소정보가 담긴다. 
     # 여담인데 , 이런식으로 주소를 저장할 변수를 하나로 끝내는 코드를 짜는게 진짜 어려운것같다. 
 #=================================================================================
+# printTree는 입력받은 트리를 bfs방식으로 탐색하여 출력하는 함수이다. 
 def printTree(node):
+
+    # return node.val
+
     all_lines = []
+
+    # 궁금증 1) node만 받아서 2,3,4,5,6,7을 어떻게 다 추가할 수 있을까? 
+    # printTree를 계속 실행해서 값을 추가하도록 해야할것같다 -> 재귀적인 방법 그러나 dfs 임. 
+
+    all_lines.append(node.val)
+
+    # 궁금증 2)
+    # all_lines.append(node.left)
+    # all_lines.append(node.right)
+
+    # 여기서 node.left에서 다시 자신의 node.left를 어떻게 부를 수 있을까? 
+
+    # 해결책 # 중요한점
+    # printTree를 계속 실행하는게 아니라, 연산이 될 노드를 계속 바꿔주면 된다. 
+    # 즉  while문을 통해 연산을 걸고, 노드를 계속 바꿔주는 방식으로 말이다. 
+
+
     return all_lines
 
 def main():
