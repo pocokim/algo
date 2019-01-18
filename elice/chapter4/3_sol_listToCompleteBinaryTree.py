@@ -31,7 +31,6 @@ def printTree(node):
     q.put(Node(-1)) # -1을 통해 각 깊이를 구별하기 위함.
 
     while q.qsize() > 0 : # q에 들어온 데이터가 있을때 
-        print(q.qsize())
         node = q.get()
 
         # not node 라는건 node가 없다는건데, 어떻게 그럴수있나? 
@@ -74,4 +73,7 @@ if __name__ == "__main__":
 # 조건문의 논리연산은 True False 인데, 1은 true , 0은 false, none도 false를 의미한다.
 # 배운점 3) 노드가 없으면
 # 노드가 없으면 이라는 뜻은 node = q.get()으로 분명 가져왔는데 없다고 말할수있냐? 고 생각할 수 있지만
-# none을 가져오는건 없다를 가져오는것이어서 가져오는게 아님. 
+# none을 가져오는건 없다를 가져오는것이어서 가져오는게 아님.
+# 배운점 4)while문으로 queue를 사용할때 좋은점. 
+# node = q.get() 로 가져오는 노드가 각각바뀌므로 인덱스를 굳이 바꾸어 주지 않아도 큐에서 자동으로 인덱스가 바뀌고
+# node.left , node.right를 사용하는데 부담이 없음. 
