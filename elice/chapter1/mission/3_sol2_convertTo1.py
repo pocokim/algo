@@ -5,6 +5,11 @@ dictionary = {
 def convertTo1(num):
     if num in dictionary:
         return dictionary[num]
+    # 메모이제이션을 하는 타이밍이 잘못된것인가? 
+    # 4-2 피보나치문제를 풀때처럼 dic에 있는지 확인하고 있으면 가져오는 식을 추가했는데
+    # 왜 메모이제이션이 안일어나는지 궁금하다. 
+    # 복습할때 count를 인자로 받아서 재귀함수가 몇번 실행되는지 확인해보자.
+    
     else :
         if num %3 == 0:
             output = min(1 + convertTo1(num/3), 1+ convertTo1(num-1))
