@@ -112,6 +112,8 @@ def deleteNode(ll, valToDelete):
 
     #     node = node.next 
 
+   
+
     if ll.head.val == valToDelete:
         ll.head = ll.head.next
 

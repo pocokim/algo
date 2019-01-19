@@ -22,25 +22,26 @@ def listToCompleteBinaryTree(lst):
 def printTree(node):
 
     
-    # thislevel = [node] 
-    # print('[',end="")
-    # while thislevel:
-    #     nextlevel = list() 
-    #     print('[',end="")
-    #     for n in thislevel:
-    #     #   print(thislevel)  
-    #         print(n.val,end="")
-    #         if n.left: nextlevel.append(n.left)
-    #         if n.right: nextlevel.append(n.right)
-    #     print(']',end="")
-    #     thislevel = nextlevel
-    # print(']')
-
-
-    thislevel = queue.Queue(node)
-    print(thislevel.qsize())
+    thislevel = [node] 
+    print(thislevel)
+    print('[',end="")
     while thislevel:
-        nextlevel = queue.Queue()
+        nextlevel = list() 
+        print('[',end="")
+        for n in thislevel:
+        #   print(thislevel)  
+            print(n.val,end="")
+            if n.left: nextlevel.append(n.left)
+            if n.right: nextlevel.append(n.right)
+        print(']',end="")
+        thislevel = nextlevel
+    print(']')
+
+
+    # thislevel = queue.Queue(node)
+    # print(thislevel.qsize())
+    # while thislevel:
+    #     nextlevel = queue.Queue()
         # for n in thislevel.:
         #     print(n.val)
 
