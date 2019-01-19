@@ -40,13 +40,33 @@ def toLinkedList(lst):
 
 # head 노드가 주어졌을 때, 해당 링크드 리스트를 뒤집은 후 뒤집힌 링크드 리스트의 헤드를 반환하는 함수를 구현 해 보세요.
 def reverseLinkedList(head):
-    return head
+    # 풀이 1  배열을 만들고, 배열을 뒤집은 다음에 그 배열을 리스트로 만들고 그 헤드를 리턴하는 방식으로 해결 
+    # 연결리스트 자료구조가 어려워서 그냥 야매로 쉬운 배열을 이용해서 풀어봄.
+    node = head
+    temp =[]
+    while node:
+        temp.append(node.val)
+        node = node.next
+    temp.reverse()
+
+    return toLinkedList(temp).head
+
+
+
+    # return head
 
 def main():
     nums = [2,8,19,37,4,5]
+    # print(type(toLinkedList(nums)))
+    # print(type(toLinkedList(nums).head))
+
     head_node = toLinkedList(nums).head
-    
-    print(linkedListToStr(head_node)) # 2->8->37->4->5
+    # head_node에는 2~ 5까지의 연결이 이미 담겨져있음.
+    # 즉 reverseLinkedList도 전체연결을 다 바꿔야한다는뜻임.
+        
+    print(linkedListToStr(head_node)) # 2->8->19->37->4->5
+
+
     reversed_head_node = reverseLinkedList(head_node)
     print(linkedListToStr(reversed_head_node)) # 5->4->37->19->8->2
 
