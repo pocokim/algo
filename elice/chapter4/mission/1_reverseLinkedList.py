@@ -5,6 +5,7 @@ class Node:
     def __init__(self, val):
         self.val = val
         self.next = None
+        self.before = None
         
     def __str__(self):
         return str(self.val)
@@ -16,8 +17,12 @@ class LinkedList:
         self.tail = head
     
     def addToEnd(self, node):
-        self.tail.next = node
-        self.tail = node
+        self.tail.next = node 
+        self.tail = node, self.tail.before = self.tail  
+        # self.tail = node , self.tail.before = self.tail # 노드의 값을 연결하기위해 swap방식으로 적어보았더니
+        # TypeError: 'Node' object is not iterable 라는 오류가 생김. 
+        print(self.tail)
+        # self.tail.before 
 
 # head node가 주어졌을 때 해당 링크드리스트를 문자열로 변환해 주는 함수입니다.
 def linkedListToStr(node):
@@ -39,17 +44,23 @@ def toLinkedList(lst):
 ####################################################################################################################################
 
 # head 노드가 주어졌을 때, 해당 링크드 리스트를 뒤집은 후 뒤집힌 링크드 리스트의 헤드를 반환하는 함수를 구현 해 보세요.
-def reverseLinkedList(head):
+# def reverseLinkedList(head):
     # 풀이 1  배열을 만들고, 배열을 뒤집은 다음에 그 배열을 리스트로 만들고 그 헤드를 리턴하는 방식으로 해결 
     # 연결리스트 자료구조가 어려워서 그냥 야매로 쉬운 배열을 이용해서 풀어봄.
-    node = head
-    temp =[]
-    while node:
-        temp.append(node.val)
-        node = node.next
-    temp.reverse()
+    # node = head
+    # temp =[]
+    # while node:
+    #     temp.append(node.val)
+    #     node = node.next
+    # temp.reverse()
 
-    return toLinkedList(temp).head
+    # return toLinkedList(temp).head
+
+    # 풀이2 
+    # head 노드는 head.next 가 8을 가리키고 head.next.next가 19를 가리켜 즉
+    # 2 8 19 37 4 5 의 순서로 연결되어있음을 저장하고 있다. 이를이용해서 어떻게 풀 수 있을까? 
+
+    # 결과적으로 원하는건 5가 head, 2가 tail이 되며 5에서 2순서로 연결되는것. 
 
 
 
@@ -66,9 +77,10 @@ def main():
         
     print(linkedListToStr(head_node)) # 2->8->19->37->4->5
 
-
-    reversed_head_node = reverseLinkedList(head_node)
-    print(linkedListToStr(reversed_head_node)) # 5->4->37->19->8->2
+    # tail_node = toLinkedList(nums).tail
+    
+    # reversed_head_node = reverseLinkedList(head_node)
+    # print(linkedListToStr(reversed_head_node)) # 5->4->37->19->8->2
 
 if __name__ == "__main__":
     main()
