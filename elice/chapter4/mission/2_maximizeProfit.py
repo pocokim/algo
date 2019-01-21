@@ -1,22 +1,31 @@
 
 def maximizeProfit(nums):
 
-    maxP = [nums[0]]
-    minP = [nums[0]]
-    profit =[0]
+    maxP = [nums[0]] # nums[i]까지의 최대값을 저장하기 위한 배열
+    minP = [nums[0]] # nums[i]까지의 최소값을 저장하기 위한 배열
+    profit =[0] # i번째까지의 이익의 최대값을 저장하기 위한 배열 
+
     for i in range(1,len(nums)):
-        if nums[i] > maxP[-1]:
-            maxP.append(nums[i])
-        if nums[i] < minP[-1]:
+        if nums[i] > maxP[-1]: # nums[i]를 입력받았을때 입력받은값이 그전까지의 입력보다 크다면 maxP에 입력
+            maxP.append(nums[i]) 
+        if nums[i] < minP[-1]: # nums[i]를 입력받았을때 입력받은값이 그전까지의 입력보다 작다면 minP에 입력 
             minP.append(nums[i])
-        if nums.index(maxP[-1]) >= nums.index(minP[-1]):
+            # i번째까지의 최소를 찾기위함.
+
+        if nums.index(maxP[-1]) >= nums.index(minP[-1]): # i번째의 최대이익은 i번째까지의 최대값에서 i번째까지의 최소값을 뺀 값임. 그러나 최대값이 나온위치는 항상 최소값의 위치보다 커야함.
             profit.append(maxP[-1]-minP[-1])
         elif nums.index(maxP[-1]) < nums.index(minP[-1]) : 
             profit.append(profit[i-1])
         
-    print(profit)
 
     return profit[-1]
+
+    # 최대값과 최소값을 지정하지 않고 dp를 사용할 수 있나? 
+
+    # profit = [0]
+    # for i in range(1,len(nums)):
+    #     if num[i] > num[i-1]:
+    #         profit.append(num[i]-num[i-1]+profit[i-1])
 
 
     # max(profit)
