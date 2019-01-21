@@ -29,6 +29,19 @@ def josephus(num, target):
             
     return temp
     
+    # def josephus(num, target):
+    # q = queue.Queue()
+    # temp = []
+    # for i in range(1,num+1):
+    #     q.put(i)
+    
+    # for i in range(num):
+    #     for j in range(target-1):
+    #         a= q.get()
+    #         q.put(a)
+    #     temp.append(q.get())
+        
+        
     
 
 
