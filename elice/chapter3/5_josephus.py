@@ -1,5 +1,9 @@
 import queue
 
+# 큐의장점 
+# 배열은 인덱스가 계속 바뀌지 않지만 
+# 큐를 사용하면 뽑았다가 다시 넣는경우 인덱스가 계속 바뀌는것을 고려할 수 있음.
+
 def josephus(num, target):
     q = queue.Queue()
     temp = []
@@ -7,6 +11,9 @@ def josephus(num, target):
     for i in range(1,num+1):
         q.put(i)
     
+
+
+
     # 처음에 while문 생각하지 못하고 짬 근데 한번만 도네?
     # for i in range(1,target+1):
     #     value = q.get()
