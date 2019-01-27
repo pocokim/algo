@@ -28,3 +28,21 @@ def dartResult(str1):
             elif str1[i] == '#':
                 scores[-1] *= -1
     return sum(scores)
+
+print(dartResult('1S2D*3T'))
+print()
+print(dartResult('1D2S#10S'))
+print()
+print(dartResult('1S*2T*3S'))
+print()
+
+print(dartResult('1D#2S*3S'))
+print()
+
+print(dartResult('1D2S0T'))
+print()
+
+print(dartResult('1T2D3D#'))
+print()
+
+print(dartResult('1D2S3T*'))

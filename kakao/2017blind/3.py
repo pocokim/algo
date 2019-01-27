@@ -5,7 +5,6 @@ def timeMeasure(size, cities):
     if size != 0:
         for i in range(len(cities)):
             if cities[i].lower() in cache:
-
                 cacheHit = cache.pop(cache.index(cities[i].lower())) # 마지막에 들어온것을 빼는것이 아닌 값이 있는 위치에서 뺴야한다. 
                 cache.insert(0,cacheHit)
                 time += 1 
