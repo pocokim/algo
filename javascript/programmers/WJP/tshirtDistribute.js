@@ -9,10 +9,9 @@ function solution(people, tshirts) {
     const fp = people.filter(person => {
         for(let item of tshirts){ // tshirt 배열에서 찾는 경우 배열 값변경
             if(person <= item){
-                const it = item 
                 tshirts.splice(tshirts.indexOf(item),1)
                 // console.log(tshirts);
-                return person <= it
+                return person <= item;
             }
         }
         
