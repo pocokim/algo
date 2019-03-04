@@ -1,14 +1,24 @@
 function firstDuplicate(a) {
-    const answer = [-1];
-    const countMap = a.reduce(function(accum,value,idx){
-       accum[value] = accum[value] + 1 || 1; 
-        if(accum[value] === 2) answer.push(value);
-        return accum;
-    },{});
-    
-    if(answer.length ===1) return answer[0]
-    else return answer[1]
+    dic ={}
+    for(let i = 0; i< a.length; i++){
+        if(!dic[a[i]]) dic[a[i]] =1;
+        else dic[a[i]] = dic[a[i]]+1;
+        
+        if(dic[a[i]] ===2) return a[i]
+    }
+    return -1
 }
+// function firstDuplicate(a) {
+//     const answer = [-1];
+//     const countMap = a.reduce(function(accum,value,idx){
+//        accum[value] = accum[value] + 1 || 1; 
+//         if(accum[value] === 2) answer.push(value);
+//         return accum;
+//     },{});
+    
+//     if(answer.length ===1) return answer[0]
+//     else return answer[1]
+// }
     // reduce 안쓰고 for문으로 , 있는지 없는지 유무로 파악할 수 있음.
     // function firstDuplicate(a) {
     //   var dictionary = {};
